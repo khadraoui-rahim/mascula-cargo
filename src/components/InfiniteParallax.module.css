@@ -1,0 +1,267 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: rgba(252, 217, 196, 0.2);
+  will-change: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.cardsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+.card {
+  position: absolute;
+  width: 120px;
+  height: 180px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Golden gradient placeholder before images load */
+.card.cardGradient {
+  background: linear-gradient(135deg, #F4E6D4 0%, #D4A574 50%, #C38E4A 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  animation: fadeInImage 0.6s ease-out forwards;
+}
+
+@keyframes fadeInImage {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Golden overlay on top of image */
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(244, 230, 212, 0.9) 0%, rgba(212, 165, 116, 0.9) 50%, rgba(195, 142, 74, 0.9) 100%);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.8s ease-out;
+  z-index: 1;
+}
+
+.cardOverlay.cardOverlayHidden {
+  opacity: 0;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce animation complexity on lower-end devices */
+@media (prefers-reduced-motion: reduce) {
+  .card.cardAnimating {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .content.contentVisible {
+    animation: none;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Fullscreen background image */
+.fullscreenBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  z-index: 300;
+  animation: fadeIn 0.5s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreenBackground.fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Black overlay on fullscreen image */
+.fullscreenOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* White phrase text overlay */
+.fullscreenPhrase {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 90%;
+  padding: 0 2rem;
+  pointer-events: none;
+  animation: phraseAppear 0.6s ease-out 0.3s both;
+}
+
+.fullscreenPhrase h2 {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes phraseAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Content overlay */
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+  text-align: center;
+  color: #000000;
+  pointer-events: none;
+  max-width: 90%;
+}
+
+.content h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .content h1 {
+    font-size: 2.5rem;
+  }
+
+  .fullscreenPhrase h2 {
+    font-size: 3rem;
+  }
+
+  .card {
+    width: 100px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content h1 {
+    font-size: 2rem;
+  }
+
+  .fullscreenPhrase h2 {
+    font-size: 2.5rem;
+  }
+
+  .card {
+    width: 80px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .fullscreenPhrase h2 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    width: 60px;
+    height: 90px;
+  }
+}

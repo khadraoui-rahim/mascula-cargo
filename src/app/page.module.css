@@ -1,0 +1,22 @@
+.main {
+    min-height: 200vh;
+    width: 100%;
+    position: relative;
+    scroll-snap-type: y proximity;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.main::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+.hero {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    scroll-snap-align: start;
+}

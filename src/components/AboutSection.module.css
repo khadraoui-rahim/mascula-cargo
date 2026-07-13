@@ -1,0 +1,329 @@
+.aboutSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.backgroundImageSecond {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Section Header with Number and Divider */
+.sectionHeader {
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.sectionNumberTop {
+  position: absolute;
+  left: 2rem;
+  top: calc(50% - 3rem);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+  z-index: 2;
+}
+
+.scrollText {
+  position: absolute;
+  left: 2rem;
+  top: calc(50% + 1rem);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: white;
+  opacity: 0.8;
+  font-weight: 400;
+  z-index: 2;
+}
+
+.dividerLine {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100vw;
+  height: 1px;
+  background: white;
+  opacity: 0.3;
+  transform: translateY(-50%);
+}
+
+/* About Us Pill */
+.aboutPill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #DC143C;
+  color: black;
+  padding: 5px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  width: fit-content;
+  margin-left: calc(50% - 20vw);
+  margin-bottom: 1rem;
+}
+
+.pillIcon {
+  flex-shrink: 0;
+}
+
+.pillTextContainer {
+  position: relative;
+  display: inline-block;
+  min-width: 90px;
+}
+
+/* Contact Us Button */
+.contactButton {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: transparent;
+  color: black;
+  padding: 0;
+  border: none;
+  width: fit-content;
+  margin-left: calc(50% - 20vw);
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.contactButton:hover .iconBox {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.contactButton:hover .buttonText {
+  background: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.contactButton:focus {
+  outline: none;
+}
+
+.contactButton:focus .iconBox {
+  background: #e8e8e8;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.contactButton:focus .buttonText {
+  background: #e8e8e8;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.contactButton:active .iconBox,
+.contactButton:active .buttonText {
+  transform: scale(0.95);
+}
+
+.iconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  background: white;
+  border-radius: 50px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.buttonText {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  height: auto;
+  background: white;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-left: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.buttonIcon {
+  flex-shrink: 0;
+}
+
+/* Title */
+.titleContainer {
+  position: relative;
+  width: 40%;
+  margin-left: calc(50% - 20vw);
+  margin-bottom: 1rem;
+  height: 8.4rem;
+}
+
+.title {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.06em;
+  margin: 0;
+  width: 100%;
+}
+
+.title span {
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+  .title {
+    font-size: 3rem;
+  }
+  
+  .titleContainer {
+    height: 7.2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: -0.05em;
+  }
+  
+  .titleContainer {
+    width: 50%;
+    margin-left: calc(50% - 25vw);
+    height: 6rem;
+  }
+  
+  .aboutPill {
+    margin-left: calc(50% - 25vw);
+    letter-spacing: -0.02em;
+  }
+  
+  .contactButton {
+    margin-left: calc(50% - 25vw);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    letter-spacing: -0.04em;
+  }
+  
+  .titleContainer {
+    width: 70%;
+    margin-left: 2rem;
+    height: 4.8rem;
+  }
+  
+  .aboutPill {
+    margin-left: 2rem;
+    letter-spacing: -0.01em;
+  }
+  
+  .contactButton {
+    margin-left: 2rem;
+  }
+  
+  .content {
+    justify-content: center;
+  }
+  
+  .sectionNumberTop {
+    top: calc(50% - 2.5rem);
+  }
+  
+  .scrollText {
+    top: calc(50% + 0.75rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+    letter-spacing: -0.03em;
+  }
+  
+  .titleContainer {
+    width: calc(100% - 4rem);
+    height: 4.2rem;
+  }
+  
+  .sectionNumberTop {
+    left: 1rem;
+    font-size: 1.25rem;
+    top: calc(50% - 2rem);
+  }
+  
+  .scrollText {
+    left: 1rem;
+    font-size: 0.65rem;
+    top: calc(50% + 0.5rem);
+  }
+  
+  .aboutPill {
+    padding: 1px 0;
+    font-size: 0.75rem;
+    gap: 0.4rem;
+  }
+  
+  .iconBox {
+    padding: 5px;
+  }
+  
+  .buttonText {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}

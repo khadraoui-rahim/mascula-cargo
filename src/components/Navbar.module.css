@@ -1,0 +1,90 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 2rem 4rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navItem {
+  background: white;
+  color: black;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-family: 'Sora', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 2rem;
+  }
+
+  .navLinks {
+    gap: 0.5rem;
+  }
+
+  .navItem {
+    padding: 0.625rem 1rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .logo svg {
+    width: 35px;
+    height: 33px;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .navItem {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.7rem;
+  }
+}
