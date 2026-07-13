@@ -1,0 +1,20 @@
+Mascula :
+Header content : Accueil(video) , a propos(qui sommes nous) , services (Notre mission + services + Nos Filiales) , notre vison , our partners , notre equipe , why us (nos valeurs + pourquoi choisir mascula)(ndir lien l contacte us) , footer (ndir lien l contact us), page rendez vous + contacte us , select language + dark/light mode
+/////////////
+whats missed : 
+- video accueil
+- logo 
+- des photos 3la services (Fret Aérien , Transport de marchandise , Fret Maritime)
+- Nos Filiales 
+- partners + les logos ta3hom ida kaian
+- note equipe (optional twali likom ida t7abo)
+- footer tous les liens (socila links , numero telephone , localisation , email)
+
+Video accueil (Hero Section)
+logo
+services photos 
+Nos Filiales
+nos partenaires
+notre equipe 
+footer (social links , numero telephone , localisation  ,email)
+color palette :(les coleurs primaires)
