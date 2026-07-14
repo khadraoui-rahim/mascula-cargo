@@ -33,6 +33,11 @@
   filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
 }
 
+.logoGolden {
+  color: #C38E4A;
+  filter: drop-shadow(0 2px 8px rgba(195, 142, 74, 0.3));
+}
+
 .logo:hover {
   transform: scale(1.05);
 }

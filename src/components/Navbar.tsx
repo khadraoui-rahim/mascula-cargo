@@ -5,17 +5,34 @@ import { useEffect, useState } from 'react'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
-  const [isWhite, setIsWhite] = useState(false)
+  const [logoColor, setLogoColor] = useState<'black' | 'white' | 'golden'>('black')
 
   useEffect(() => {
     const handleScroll = () => {
-      // Change logo color when scrolling past first 100vh (into services section)
       const scrollPosition = window.scrollY
       const viewportHeight = window.innerHeight
       
-      setIsWhite(scrollPosition >= viewportHeight)
+      // Calculate which section we're in
+      const sectionIndex = Math.floor(scrollPosition / viewportHeight)
+      
+      // Section 0: Hero (black logo)
+      // Section 1: Services (white logo)
+      // Section 2: Services Cards (white logo)
+      // Section 3: Founders (black logo on light background)
+      // Section 4: Partners (golden logo on light background)
+      
+      if (sectionIndex === 0) {
+        setLogoColor('black')
+      } else if (sectionIndex === 1 || sectionIndex === 2) {
+        setLogoColor('white')
+      } else if (sectionIndex === 3) {
+        setLogoColor('black')
+      } else if (sectionIndex >= 4) {
+        setLogoColor('golden')
+      }
     }
 
+    handleScroll() // Initial check
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -31,7 +48,11 @@ export default function Navbar() {
             viewBox="0 0 389 358" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
-            className={isWhite ? styles.logoWhite : ''}
+            className={
+              logoColor === 'white' ? styles.logoWhite : 
+              logoColor === 'golden' ? styles.logoGolden : 
+              ''
+            }
           >
             <path d="M129.524 313.862L113.87 279.423L193.705 258.29L274.323 279.423L258.073 313.862L227.197 320.906C215.822 317.514 196.955 311.357 193.705 313.862C190.574 311.357 170.224 317.514 159.266 320.906L129.524 313.862Z" fill="currentColor"/>
             <path d="M42.2699 29.3301V301.065L73.3253 308.829V102.655L193.234 200.135L311.417 102.655L313.142 308.829L344.198 301.065V29.3301L193.234 153.552L42.2699 29.3301Z" fill="currentColor" stroke="currentColor" strokeWidth="1.7253"/>

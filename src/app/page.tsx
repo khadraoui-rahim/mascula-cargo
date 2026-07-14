@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar'
 import ServicesSection from '@/components/ServicesSection'
 import ServicesCardsSection from '@/components/ServicesCardsSection'
 import FoundersSection from '@/components/FoundersSection'
+import PartnersSection from '@/components/PartnersSection'
 import styles from './page.module.css'
 
 // Dynamically import InfiniteParallax with no SSR for better performance
@@ -43,6 +44,9 @@ export default function Home() {
             
             {/* Founders Section - 100vh */}
             <FoundersSection />
+            
+            {/* Partners Section - 100vh */}
+            <PartnersSection />
           </main>
         </>
       )}
