@@ -1,14 +1,42 @@
 .partnersSection {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background: #F5F5F0;
+  min-height: 100vh;
+  background: #E8E8DD;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   scroll-snap-align: start;
   overflow: hidden;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+/* Header */
+.headerWrapper {
+  position: relative;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.scribble {
+  width: 400px;
+  height: 30px;
+  margin-top: 0.5rem;
+  pointer-events: none;
 }
 
 /* Scrolling Cards Row */
@@ -32,7 +60,7 @@
   flex-shrink: 0;
   width: 350px;
   height: 100%;
-  background: #F5F5F0;
+  background: #E8E8DD;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,7 +89,7 @@
 .expandedContent {
   width: 100%;
   overflow: hidden;
-  background: #F5F5F0;
+  background: #E8E8DD;
 }
 
 .expandedInner {
@@ -101,6 +129,23 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .partnersSection {
+    padding-top: 5rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 2.5rem;
+  }
+
+  .header {
+    font-size: 2.5rem;
+  }
+
+  .scribble {
+    width: 350px;
+    height: 25px;
+  }
+
   .scrollContainer {
     height: 200px;
   }
@@ -127,6 +172,23 @@
 }
 
 @media (max-width: 768px) {
+  .partnersSection {
+    padding-top: 4.5rem;
+  }
+
+  .headerWrapper {
+    margin-bottom: 2rem;
+  }
+
+  .header {
+    font-size: 2rem;
+  }
+
+  .scribble {
+    width: 300px;
+    height: 22px;
+  }
+
   .scrollContainer {
     height: 180px;
   }
@@ -154,6 +216,19 @@
 }
 
 @media (max-width: 480px) {
+  .headerWrapper {
+    margin-bottom: 1.5rem;
+  }
+
+  .header {
+    font-size: 1.5rem;
+  }
+
+  .scribble {
+    width: 250px;
+    height: 20px;
+  }
+
   .scrollContainer {
     height: 150px;
   }

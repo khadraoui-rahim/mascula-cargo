@@ -35,6 +35,14 @@ export default function PartnersSection() {
   const [selectedPartner, setSelectedPartner] = useState<typeof partners[0] | null>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
   const [isPaused, setIsPaused] = useState(false)
+  
+  const headerText = "Our Partners"
+  
+  // Animation variants for letter-by-letter appearance
+  const letterVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  }
 
   // Infinite scroll animation
   useEffect(() => {
@@ -80,6 +88,74 @@ export default function PartnersSection() {
 
   return (
     <section className={styles.partnersSection}>
+      {/* Header with Letter Animation */}
+      <div className={styles.headerWrapper}>
+        <motion.h2 
+          className={styles.header}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.8 }}
+        >
+          {headerText.split('').map((char, index) => (
+            <motion.span
+              key={`header-${index}`}
+              variants={letterVariants}
+              transition={{
+                duration: 0.03,
+                delay: index * 0.05,
+                ease: 'easeOut'
+              }}
+              style={{ display: char === ' ' ? 'inline' : 'inline-block' }}
+            >
+              {char === ' ' ? '\u00A0' : char}
+            </motion.span>
+          ))}
+        </motion.h2>
+        
+        {/* Scribble underline */}
+        <motion.svg
+          className={styles.scribble}
+          viewBox="0 0 400 30"
+          xmlns="http://www.w3.org/2000/svg"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.8 }}
+          transition={{ duration: 0.3, delay: headerText.length * 0.05 + 0.2 }}
+        >
+          <motion.path
+            d="M 10 15 Q 50 8, 100 16 T 200 14 T 300 17 T 390 15"
+            stroke="#C38E4A"
+            strokeWidth="2.5"
+            fill="none"
+            strokeLinecap="round"
+            initial={{ pathLength: 0 }}
+            whileInView={{ pathLength: 1 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{
+              duration: 1,
+              delay: headerText.length * 0.05 + 0.2,
+              ease: 'easeInOut'
+            }}
+          />
+          <motion.path
+            d="M 15 18 Q 55 12, 105 19 T 205 17 T 305 20 T 385 18"
+            stroke="#C38E4A"
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+            opacity="0.6"
+            initial={{ pathLength: 0 }}
+            whileInView={{ pathLength: 1 }}
+            viewport={{ once: true, amount: 0.8 }}
+            transition={{
+              duration: 1,
+              delay: headerText.length * 0.05 + 0.3,
+              ease: 'easeInOut'
+            }}
+          />
+        </motion.svg>
+      </div>
+      
       {/* Scrolling Cards Row */}
       <div 
         className={styles.scrollContainer}
