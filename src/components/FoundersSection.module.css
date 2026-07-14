@@ -1,0 +1,199 @@
+.foundersSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #F5F5F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Main Content - Image and Description */
+.mainContent {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Square Image Container */
+.imageContainer {
+  flex-shrink: 0;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  background: #E0E0D8;
+}
+
+.founderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Description Container */
+.descriptionContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.description {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.founderName {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.founderTitle {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #666666;
+  margin: 0;
+}
+
+/* Progress Line with 4 Chunks */
+.progressContainer {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.progressChunk {
+  flex: 1;
+  height: 3px;
+  background: #D0D0C8;
+  position: relative;
+  overflow: hidden;
+}
+
+.progressFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #000000;
+  transition: width 0.05s linear;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .content {
+    padding: 3rem 2rem;
+    gap: 3rem;
+  }
+
+  .mainContent {
+    gap: 3rem;
+  }
+
+  .imageContainer {
+    width: 350px;
+    height: 350px;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .founderName {
+    font-size: 1rem;
+  }
+
+  .founderTitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .mainContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .imageContainer {
+    width: 300px;
+    height: 300px;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .founderName {
+    font-size: 0.95rem;
+  }
+
+  .founderTitle {
+    font-size: 0.85rem;
+  }
+
+  .progressContainer {
+    gap: 0.5rem;
+  }
+
+  .progressChunk {
+    height: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .mainContent {
+    gap: 1.5rem;
+  }
+
+  .imageContainer {
+    width: 250px;
+    height: 250px;
+  }
+
+  .descriptionContainer {
+    gap: 1rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .founderName {
+    font-size: 0.9rem;
+  }
+
+  .founderTitle {
+    font-size: 0.8rem;
+  }
+}

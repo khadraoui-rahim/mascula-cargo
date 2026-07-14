@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 2rem 4rem;
+  padding: 2rem 0;
 }
 
 .container {
@@ -13,18 +13,28 @@
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
+  padding: 0 4rem;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  color: black;
+}
+
+.logo svg {
+  transition: color 0.3s ease;
+}
+
+.logoWhite {
+  color: white;
+  filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
 }
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
 }
 
 .navLinks {
@@ -55,7 +65,11 @@
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 0;
+  }
+
+  .container {
+    padding: 0 2rem;
   }
 
   .navLinks {
@@ -70,7 +84,11 @@
 
 @media (max-width: 640px) {
   .navbar {
-    padding: 1rem;
+    padding: 1rem 0;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 
   .logo svg {

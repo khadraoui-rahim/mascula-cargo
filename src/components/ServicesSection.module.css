@@ -1,0 +1,279 @@
+.servicesSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  padding: 12rem 4rem 4rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.topContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 600px;
+}
+
+/* Main Heading */
+.mainHeading {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Description Text */
+.description {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: white;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+/* Contact US Button */
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: black;
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 0;
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.01em;
+  width: fit-content;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contactButton:hover {
+  background: #f0f0f0;
+  transform: scale(1.02);
+}
+
+.contactButton:focus {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.contactButton:active {
+  transform: scale(0.98);
+  background: #e5e5e5;
+}
+
+/* Bottom Heading */
+.bottomHeadingWrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.bottomHeading {
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.scribble {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  pointer-events: none;
+}
+
+.aboutUsText {
+  position: absolute;
+  bottom: 2rem;
+  right: 4rem;
+  font-family: var(--font-sora), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: white;
+  letter-spacing: 0.05em;
+  margin: 0;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+/* Responsive Design */
+@media (max-width: 1440px) {
+  .content {
+    padding: 16rem 4rem 4rem 4rem;
+  }
+
+  .mainHeading {
+    font-size: 3rem;
+  }
+  
+  .bottomHeading {
+    font-size: 4.5rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .scribble {
+    bottom: -12px;
+    height: 35px;
+  }
+
+  .aboutUsText {
+    bottom: 2rem;
+    right: 4rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 12rem 2rem 3rem 2rem;
+  }
+  
+  .mainHeading {
+    font-size: 2.5rem;
+  }
+  
+  .bottomHeading {
+    font-size: 3.5rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  .contactButton {
+    padding: 0.75rem 1.75rem;
+    font-size: 0.9rem;
+  }
+
+  .scribble {
+    bottom: -10px;
+    height: 30px;
+  }
+
+  .aboutUsText {
+    bottom: 1.5rem;
+    right: 2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 10rem 1.5rem 2.5rem 1.5rem;
+  }
+  
+  .mainHeading {
+    font-size: 2rem;
+  }
+  
+  .bottomHeading {
+    font-size: 2.5rem;
+  }
+  
+  .description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  
+  .contactButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .scribble {
+    bottom: -8px;
+    height: 25px;
+  }
+
+  .aboutUsText {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 8rem 1rem 2rem 1rem;
+  }
+  
+  .mainHeading {
+    font-size: 1.75rem;
+  }
+  
+  .bottomHeading {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 0.8rem;
+  }
+  
+  .contactButton {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .scribble {
+    bottom: -6px;
+    height: 20px;
+  }
+
+  .aboutUsText {
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.7rem;
+  }
+}
+
